@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campo Minado Orango | Senac</title>
+  <link rel="stylesheet" href="/static/css/style.css?v=netlify1">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand-strip">
+    <div class="brand senac-brand">
+      <img class="brand-logo senac-logo" src="/static/img/senac.png" alt="Senac">
+    </div>
+    <span class="brand-divider"></span>
+    <div class="brand orango-brand">
+      <img class="brand-logo orango-logo" src="/static/img/orango.png" alt="Orango">
+    </div>
+  </div>
+  <div class="top-message">
+    <strong>Aprenda. Conquiste. Evolua.</strong>
+    <span>Com o Senac e o Orango, seu futuro é ainda mais conectado!</span>
+  </div>
+  <a class="primary-btn link-btn" id="headerOrangoBtn" href="https://orango.senac.br/" target="_blank" rel="noopener noreferrer">Conhecer o Orango ↗</a>
+</header>
+
+<div class="app-layout">
+  <aside class="sidebar">
+    <nav>
+      <a class="nav-item" href="#inicio" data-page="inicio"><span>⌂</span> Início</a>
+      <a class="nav-item active" href="#jogo" data-page="jogo"><span>🎮</span> Campo Minado</a>
+      <a class="nav-item" href="#conquistas" data-page="conquistas"><span>🏆</span> Conquistas</a>
+      <a class="nav-item" href="#ranking" data-page="ranking"><span>▥</span> Ranking</a>
+      <a class="nav-item" href="#sobre-orango" data-page="sobre"><span>ⓘ</span> Sobre o Orango</a>
+    </nav>
+    <div class="mascot-card">
+      <img src="/static/img/mascote_painel.png" alt="Mascote do Orango" class="mascot-panel-image">
+    </div>
+  </aside>
+
+  <main class="main-panel" id="jogo">
+    <section class="game-heading">
+      <div class="heading-icon">⚑</div>
+      <div>
+        <h1>Campo Minado Orango</h1>
+        <p>Descubra as oportunidades e evite as minas!</p>
+      </div>
+      <div class="mini-senac"><img src="/static/img/senac.png" alt="Senac" class="mini-senac-logo"></div>
+    </section>
+
+    <section class="stats-row">
+      <div class="stat-card"><span class="stat-icon coin">★</span><div><small>Pontos</small><strong id="score">0</strong></div></div>
+      <div class="stat-card"><span class="stat-icon star">★</span><div><small>Recompensas</small><strong id="rewardCount">0/5</strong></div></div>
+      <div class="stat-card"><span class="stat-icon mine">✹</span><div><small>Minas</small><strong id="mineCount">10</strong></div></div>
+      <div class="difficulty-card"><small>Dificuldade</small><div class="difficulty-buttons">
+        <button class="difficulty active" data-level="easy">Fácil</button>
+        <button class="difficulty" data-level="medium">Médio</button>
+        <button class="difficulty" data-level="hard">Difícil</button>
+      </div></div>
+    </section>
+
+    <section class="board-wrap">
+      <div id="board" class="board easy" aria-label="Tabuleiro de campo minado"></div>
+    </section>
+
+    <section class="discovery-banner">
+      <div class="banner-mascot">🐵</div>
+      <div class="banner-copy"><strong id="bannerTitle">Pronto para jogar?</strong><span id="bannerText">Encontre recompensas e descubra novas oportunidades no Orango.</span></div>
+      <button class="primary-btn small-btn" id="orangoBtn" type="button">Explorar cursos ↗</button>
+    </section>
+    <div class="game-actions">
+      <span id="statusText">Dica: os números mostram quantas minas estão nas casas vizinhas.</span>
+      <div class="game-action-buttons"><button class="secondary-btn" id="tutorialBtn" type="button">▶ Como jogar</button><button class="secondary-btn" id="restartBtn" type="button">↻ Reiniciar partida</button></div>
+    </div>
+
+    <section class="content-page" id="page-inicio" hidden>
+      <div class="page-hero"><span class="page-kicker">SENAC + ORANGO</span><h1>Aprender também pode ser uma aventura.</h1><p>Jogue, descubra itens especiais e acompanhe suas conquistas enquanto conhece o universo de cursos gratuitos do Orango.</p><div class="page-actions"><button class="primary-btn" data-go="jogo">Jogar agora 🎮</button><a class="secondary-btn link-btn" href="https://orango.senac.br/" target="_blank" rel="noopener noreferrer">Conhecer o Orango ↗</a></div></div>
+      <div class="achievement-summary home-stats"><div><small>Sua pontuação</small><strong id="homePoints">0</strong></div><div><small>Partidas</small><strong id="homeGames">0</strong></div><div><small>Vitórias</small><strong id="homeWins">0</strong></div><div><small>Conquistas</small><strong id="homeAchievements">0/7</strong></div></div><section class="home-leaders"><h2>🏆 Destaques do ranking</h2><div id="homeLeaders">Carregando jogadores...</div></section><div class="feature-grid"><article class="feature-card"><span>🎮</span><h3>Jogue no seu ritmo</h3><p>Encontre casas seguras, use os números como pistas e evite as minas.</p></article><article class="feature-card"><span>🏆</span><h3>Desbloqueie conquistas</h3><p>Complete desafios e acumule pontos registrados no banco de dados local.</p></article><article class="feature-card"><span>📚</span><h3>Explore novos caminhos</h3><p>Conheça cursos online gratuitos em tecnologia, criatividade, negócios e muito mais.</p></article></div>
+      <div class="welcome-strip"><div><h2>Sua jornada começa aqui</h2><p>O jogo é um projeto demonstrativo inspirado na proposta de aprendizagem do Orango.</p></div><a class="primary-btn link-btn" href="https://orango.senac.br/" target="_blank" rel="noopener noreferrer">Conhecer o Orango ↗</a></div>
+    </section>
+    <section class="content-page" id="page-conquistas" hidden>
+      <div class="page-heading"><span class="page-kicker">SUA JORNADA</span><h1>Conquistas</h1><p>Complete desafios no Campo Minado para desbloquear medalhas e pontos extras.</p></div>
+      <div class="achievement-summary"><div><small>Conquistas desbloqueadas</small><strong id="achievementProgress">0/7</strong></div><div><small>Pontos totais</small><strong id="achievementPoints">0</strong></div><div><small>Partidas jogadas</small><strong id="achievementGames">0</strong></div></div>
+      <div class="achievement-grid" id="achievementGrid"><p>Carregando conquistas...</p></div>
+    </section>
+    <section class="content-page" id="page-ranking" hidden>
+      <div class="page-heading"><span class="page-kicker">PLACAR LOCAL</span><h1>Ranking</h1><p>Classificação compartilhada de todos os jogadores, ordenada por pontos, vitórias e partidas.</p><button class="primary-btn" id="nicknameBtn" type="button">✎ Definir meu apelido</button></div>
+      <div class="ranking-table-wrap"><table class="ranking-table"><thead><tr><th>#</th><th>Jogador</th><th>Pontos</th><th>Partidas</th><th>Vitórias</th><th>Conquistas</th><th>Ação</th></tr></thead><tbody id="rankingBody"><tr><td colspan="7">Carregando ranking...</td></tr></tbody></table></div>
+      <p class="muted-note">Ranking online compartilhado entre todos os jogadores deste jogo. Não é integrado à conta oficial do Orango.</p>
+    </section>
+    <section class="content-page" id="page-sobre" hidden>
+      <div class="page-hero about-hero"><span class="page-kicker">PRAZER, ORANGO!</span><h1>Aprenda do seu jeito e no seu tempo.</h1><p>O Orango é uma plataforma de aprendizagem relacionada ao Senac. Por meio dela, estudantes podem conhecer oportunidades de estudo e desenvolver conhecimentos. Consulte o site oficial para ver as opções disponíveis.</p><div class="page-actions"><a class="primary-btn link-btn" href="https://orango.senac.br/" target="_blank" rel="noopener noreferrer">Acessar o Orango ↗</a><a class="secondary-btn link-btn" href="https://orango.senac.br/" target="_blank" rel="noopener noreferrer">Ver cursos ↗</a></div></div>
+      <div class="about-facts"><article><span>🌐</span><h3>Aprendizagem</h3><p>Conheça oportunidades de estudo diretamente na plataforma oficial.</p></article><article><span>🎓</span><h3>Desenvolvimento</h3><p>Explore conteúdos para ampliar conhecimentos e desenvolver habilidades.</p></article><article><span>🚀</span><h3>Projeto complementar</h3><p>Este Campo Minado é um projeto local independente, não integrado aos sistemas internos do Orango.</p></article></div>
+      <div class="welcome-strip"><div><h2>Pronto para conhecer?</h2><p>Acesse o ambiente oficial para entrar na sua conta ou criar um cadastro.</p></div><a class="primary-btn link-btn" href="https://orango.senac.br/" target="_blank" rel="noopener noreferrer">Acessar o Orango ↗</a></div>
+    </section>
+
+  </main>
+
+  <aside class="right-column">
+    <section class="side-card visitor-card">
+      <div class="visitor-top"><div class="avatar">🐵</div><div><strong>Visitante</strong><span>Jogue e ganhe pontos!</span></div></div>
+    </section>
+    <section class="side-card" id="recompensas">
+      <h2><span class="side-emoji">🎁</span> Recompensas</h2><button class="text-link" data-go="conquistas">Ver todas as conquistas ↗</button>
+      <p>Encontre itens especiais e descubra a recompensa de 20% de desconto em um curso. O prêmio é ilustrativo e não representa um cupom oficial do Orango.</p>
+      <div class="progress-row"><div class="progress-track"><div id="progressFill" class="progress-fill"></div></div><b id="progressLabel">0/5</b></div>
+      <div class="reward-collection" aria-label="Coleção de recompensas">
+        <div class="reward-item" title="Moeda Orango"><span class="reward" data-reward="0">🪙</span><small>Moeda</small><em>+40 pts</em></div>
+        <div class="reward-item" title="Selo Explorador"><span class="reward" data-reward="1">🏅</span><small>Explorador</small><em>+60 pts</em></div>
+        <div class="reward-item" title="Caixa surpresa"><span class="reward" data-reward="2">🎁</span><small>Surpresa</small><em>+80 pts</em></div>
+        <div class="reward-item discount-reward-item" title="Cupom de 20% de desconto em um curso"><span class="reward discount-reward" data-reward="3">20%</span><small>20% em um curso</small><em>Desconto</em></div>
+        <div class="reward-item" title="Coroa Mestre"><span class="reward" data-reward="4">👑</span><small>Mestre</small><em>+150 pts</em></div>
+      </div>
+      <div class="reward-note" id="rewardNote"><strong>Sua missão:</strong> encontre os 5 itens escondidos no tabuleiro. Quanto mais rara a conquista, mais pontos você recebe.</div>
+    </section>
+    <section class="side-card howto">
+      <h2><span class="help-icon">?</span> Como jogar?</h2>
+      <div class="step"><b>1</b><span>Clique em um quadrado para revelar o conteúdo.</span></div>
+      <div class="step"><b>2</b><span>Evite as minas! Use os números como pista.</span></div>
+      <div class="step"><b>3</b><span>Encontre recompensas e acumule pontos.</span></div>
+      <div class="step"><b>4</b><span>Entre no Orango para conhecer a plataforma e salvar seu progresso.</span></div>
+    </section>
+    <section class="side-card tip-card"><span>🏆</span><p><strong>Quanto mais você joga,</strong><br>mais aprende e conquista!</p></section>
+  </aside>
+</div>
+
+
+<div class="modal-backdrop" id="tutorialModal" hidden role="dialog" aria-modal="true" aria-labelledby="tutorialTitle">
+  <section class="game-modal tutorial-modal">
+    <button class="modal-close" type="button" data-close-modal="tutorialModal" aria-label="Fechar">×</button>
+    <span class="page-kicker">GUIA RÁPIDO</span><h2 id="tutorialTitle">Como jogar Campo Minado</h2>
+    <p>Revele casas, use os números como pistas e encontre os cinco itens especiais sem tocar nas minas.</p>
+    <div class="tutorial-demo" aria-label="Animação demonstrativa do tabuleiro">
+      <div class="demo-tile demo-safe">✓</div><div class="demo-tile demo-number">1</div><div class="demo-tile demo-hidden"></div><div class="demo-tile demo-reward">🎁</div><div class="demo-tile demo-hidden"></div><div class="demo-tile demo-number">2</div><div class="demo-tile demo-mine">💣</div><div class="demo-tile demo-hidden"></div><div class="demo-tile demo-safe">✓</div>
+    </div>
+    <ol class="tutorial-steps"><li><b>1</b><span><strong>Clique com o botão esquerdo</strong> para revelar uma casa.</span></li><li><b>2</b><span><strong>Observe os números:</strong> eles mostram quantas minas existem nas casas vizinhas.</span></li><li><b>3</b><span><strong>Marque suspeitas</strong> com o botão direito e evite as bombas.</span></li><li><b>4</b><span><strong>Encontre os 5 itens</strong> para completar a coleção e ver a mensagem especial.</span></li></ol>
+    <button class="primary-btn" id="startTutorialBtn" type="button">Entendi, vamos jogar! 🎮</button>
+  </section>
+</div>
+<div class="modal-backdrop" id="victoryModal" hidden role="dialog" aria-modal="true" aria-labelledby="victoryTitle">
+  <section class="game-modal victory-modal">
+    <div class="victory-confetti" aria-hidden="true">🎉 ✨ 🎊</div><span class="page-kicker">MISSÃO CONCLUÍDA</span>
+    <h2 id="victoryTitle">Você ganhou!</h2><p>Parabéns! Você encontrou as cinco recompensas do Campo Minado Orango.</p>
+    <div class="victory-prize"><strong>20%</strong><span>Recompensa ilustrativa de desconto em um curso. Não é um cupom oficial.</span></div>
+    <a class="primary-btn link-btn victory-orango-btn" href="https://orango.senac.br/" target="_blank" rel="noopener noreferrer">Ir para o Orango ↗</a>
+    <button class="secondary-btn" type="button" data-close-modal="victoryModal">Continuar no jogo</button>
+  </section>
+</div>
+
+<footer id="sobre">
+  <div class="footer-brands"><img class="footer-senac-logo" src="/static/img/senac.png" alt="Senac"><span></span><img class="footer-orango-logo" src="/static/img/orango.png" alt="Orango"></div>
+  <p>Senac + Orango = Mais oportunidades para você!</p>
+  <small>Projeto demonstrativo • Pontuações e conquistas armazenadas em banco de dados online. A conta oficial do Orango é independente.</small>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/static/js/config.js?v=netlify1"></script>
+<script src="/static/js/game.js?v=netlify1"></script>
+</body>
+</html>

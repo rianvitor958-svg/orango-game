@@ -1,0 +1,12 @@
+LEIA PRIMEIRO — ORANGO ONLINE
+
+Esta pasta é a versão preparada para Netlify + Supabase. Ela não usa mais o servidor Flask/SQLite local.
+
+1) Abra README_NETLIFY.txt e siga a configuração do Supabase e do Netlify.
+2) Execute supabase/schema.sql no SQL Editor do Supabase.
+3) Preencha static/js/config.js com a URL e a chave pública do Supabase.
+4) Cadastre no Netlify as variáveis SUPABASE_URL, SUPABASE_ANON_KEY e SUPABASE_SERVICE_ROLE_KEY.
+5) Publique conectando um repositório Git ao Netlify para que as Netlify Functions sejam publicadas junto com o site.
+
+Sem configurar o Supabase, o tabuleiro abre, mas o ranking, as conquistas e a gravação online não funcionarão.
+Nunca compartilhe a chave SUPABASE_SERVICE_ROLE_KEY. Ela deve existir somente nas variáveis privadas do Netlify.

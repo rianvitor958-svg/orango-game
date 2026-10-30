@@ -1,0 +1,170 @@
+:root{--navy:#031a35;--navy2:#062b54;--panel:#052443;--line:#0d4c7c;--orange:#ff790b;--orange2:#ff9d13;--white:#f4f8ff;--muted:#b9cce2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 45% 0%,#07315d 0,#031b36 55%,#02142b 100%);color:var(--white);font-family:Inter,Segoe UI,Arial,sans-serif;min-height:100vh}
+button,a{font:inherit}button{cursor:pointer;transition:transform .15s,filter .15s}button:hover{filter:brightness(1.09);transform:translateY(-1px)}
+.topbar{min-height:112px;background:#f9fafc;color:#08294f;display:flex;align-items:center;gap:30px;padding:18px 3.2%;border-bottom:5px solid var(--orange);position:relative;overflow:hidden}
+.brand-strip{display:flex;align-items:center;gap:22px;min-width:405px}.brand{display:flex;align-items:center;font-weight:900;letter-spacing:-1.5px}.senac-brand{font-size:36px;color:#07346a}.senac-symbol{font-size:35px;color:#ff810b;margin-right:5px;transform:rotate(-15deg)}.brand-divider{height:48px;width:2px;background:#0c3766}.orango-brand{font-size:36px;color:#ed5e08;gap:8px}.orango-icon{display:inline-grid;place-items:center;border:5px solid #ed5e08;border-radius:50%;width:36px;height:36px;font-size:15px}
+.top-message{display:flex;flex-direction:column;gap:7px;flex:1}.top-message strong{font-size:20px}.top-message span{font-size:13px;color:#24415f;max-width:330px;line-height:1.5}.primary-btn{border:0;border-radius:15px;background:linear-gradient(135deg,#ff9b12,#ff6908);color:white;font-weight:800;padding:15px 24px;box-shadow:0 7px 20px #ff790b20;white-space:nowrap}.primary-btn span{font-size:18px;margin-right:8px}.app-layout{display:grid;grid-template-columns:205px minmax(400px,1fr) 270px;gap:18px;padding:20px 20px 8px;max-width:1800px;margin:auto}.sidebar,.main-panel,.side-card{background:linear-gradient(145deg,#052849eF,#031c36f2);border:1px solid var(--line);border-radius:17px;box-shadow:0 12px 32px #00000012}.sidebar{padding:12px;display:flex;flex-direction:column;justify-content:space-between;min-height:820px}.sidebar nav{display:flex;flex-direction:column;gap:6px}.nav-item{display:flex;align-items:center;gap:13px;padding:14px 12px;color:#e4efff;text-decoration:none;border-radius:11px;font-size:14px}.nav-item span{width:23px;text-align:center;font-size:20px}.nav-item.active{background:linear-gradient(110deg,#ff9a12,#ff6b0a);color:white;font-weight:800;box-shadow:0 8px 18px #ff790b20}.mascot-card{border-radius:12px;overflow:hidden;text-align:center;background:linear-gradient(160deg,#0b3b6a,#05284b);padding:18px 8px 22px;position:relative;isolation:isolate}.mascot{font-size:82px;filter:drop-shadow(0 8px 7px #00152a)}.mascot-card p{font-size:14px;font-weight:750;line-height:1.55;position:relative;z-index:2}.orange-swoosh{position:absolute;z-index:-1;height:70px;background:var(--orange);bottom:-36px;left:-20px;right:-20px;transform:rotate(-9deg)}
+.main-panel{padding:20px;min-width:0}.game-heading{display:flex;align-items:center;gap:13px;margin:2px 4px 22px}.heading-icon{font-size:43px;color:#ffb016}.game-heading h1{font-size:clamp(22px,2.1vw,32px);margin:0 0 6px;letter-spacing:-.6px}.game-heading p{margin:0;color:#d4e2f2;font-size:15px}.mini-senac{margin-left:auto;font-size:19px;font-weight:900;white-space:nowrap}.mini-senac span{color:white;font-size:22px}
+.stats-row{display:grid;grid-template-columns:repeat(3,minmax(80px,1fr)) minmax(190px,1.7fr);gap:9px;margin-bottom:17px}.stat-card,.difficulty-card{background:#04203b;border:1px solid #0c4775;border-radius:13px;padding:12px 10px;display:flex;align-items:center;gap:10px;min-width:0}.stat-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;font-size:22px;flex-shrink:0}.coin{background:#ffb21b;color:#fff4b4;border:3px solid #d67a00}.star{color:#ffb51c;font-size:31px}.mine{color:#ff453d;font-size:27px}.stat-card small,.difficulty-card small{display:block;font-size:11px;color:#d5e4f5;margin-bottom:4px}.stat-card strong{font-size:18px}.difficulty-card{display:block;padding:10px}.difficulty-buttons{display:flex;gap:5px;margin-top:7px}.difficulty{border:1px solid #125080;background:#06315c;color:#dceaff;border-radius:9px;padding:9px 6px;flex:1;font-size:12px}.difficulty.active{background:linear-gradient(135deg,#ffb21a,#ff8508);border-color:#ffab19;color:#162a3e;font-weight:900}
+.board-wrap{background:#021a32;border:1px solid #0b4b7c;border-radius:15px;padding:12px;overflow:auto}.board{display:grid;grid-template-columns:repeat(10,minmax(24px,1fr));gap:5px;max-width:780px;margin:auto}.board.medium{grid-template-columns:repeat(12,minmax(22px,1fr))}.board.hard{grid-template-columns:repeat(14,minmax(20px,1fr));gap:4px}.tile{aspect-ratio:1/1;min-width:0;border:1px solid #225b91;border-radius:8px;background:linear-gradient(145deg,#174b7f,#0a315b);box-shadow:inset 0 1px 0 #ffffff15,0 3px 6px #0002;color:#b9d2ed;font-weight:900;font-size:clamp(14px,1.8vw,24px);display:grid;place-items:center;padding:0}.tile:before{content:"◉";font-size:clamp(11px,1.3vw,18px);color:#759bc1;opacity:.62}.tile.revealed{background:#031b34;border-color:#082b4c;box-shadow:inset 0 2px 5px #0004;cursor:default}.tile.revealed:before{content:none}.tile.flagged:before{content:"⚑";color:#ffb21b;opacity:1;font-size:22px}.tile.reward-tile{background:linear-gradient(145deg,#ffb521,#ff7a00);color:white}.tile.mine-tile{background:#9f252e}.tile.n1{color:#13d8ff}.tile.n2{color:#5fe28a}.tile.n3{color:#ff4b4b}.tile.n4{color:#a89aff}.tile.n5{color:#ff9e43}.discovery-banner{display:flex;align-items:center;gap:13px;margin-top:17px;padding:12px;background:#041f3b;border:1px solid #0b4c7e;border-radius:13px}.banner-mascot{font-size:38px}.banner-copy{display:flex;flex-direction:column;gap:5px;flex:1;min-width:0}.banner-copy strong{color:#ffa514;font-size:14px}.banner-copy span{font-size:12px;color:#d1e0f1;line-height:1.45}.small-btn{padding:12px 17px;border-radius:12px;font-size:12px}.game-actions{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:13px 2px 0;color:#a9c1dc;font-size:11px}.secondary-btn{border:1px solid #1a5685;background:#082b4e;color:#e7f1ff;padding:9px 12px;border-radius:9px;font-size:12px;white-space:nowrap}
+.right-column{display:flex;flex-direction:column;gap:17px;padding-top:8px}.side-card{padding:17px 16px}.visitor-top{display:flex;align-items:center;gap:13px;margin-bottom:17px}.avatar{display:grid;place-items:center;width:62px;height:62px;background:#073b6c;border:2px solid #1c639a;border-radius:50%;font-size:36px}.visitor-top div:last-child{display:flex;flex-direction:column;gap:6px}.visitor-top strong{font-size:16px}.visitor-top span{font-size:12px;color:#d2e1f2}.outline-btn{width:100%;border:2px solid #ff8209;color:white;background:transparent;padding:11px;border-radius:12px;font-weight:800;font-size:13px}.side-card h2{display:flex;align-items:center;gap:10px;font-size:16px;margin:0 0 12px}.side-emoji{font-size:25px}.side-card p{font-size:13px;line-height:1.55;color:#d5e3f3;margin:0}.progress-row{display:flex;align-items:center;gap:12px;margin:16px 0}.progress-track{height:12px;background:#153e68;border-radius:99px;overflow:hidden;flex:1}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#ff6809,#ffb41b);border-radius:99px;transition:width .3s}.progress-row b{font-size:12px}.reward-icons{display:flex;gap:7px;justify-content:space-between}.reward{width:40px;height:40px;border:1px solid #155184;border-radius:9px;display:grid;place-items:center;font-size:22px;color:#6f8eb1;background:#062443}.reward.unlocked{color:#fff4bd;background:linear-gradient(145deg,#ffb21b,#ff790b);border-color:#ffb21b;box-shadow:0 0 0 3px #ff970b20}.howto h2{margin-bottom:17px}.help-icon{display:grid;place-items:center;background:#f5f8ff;color:#0a2b4c;border-radius:50%;font-size:18px;width:28px;height:28px}.step{display:flex;align-items:flex-start;gap:12px;margin:0 0 14px;font-size:12px;line-height:1.5;color:#e2ebf8}.step:last-child{margin-bottom:0}.step b{background:linear-gradient(140deg,#ff9f14,#ff6908);border-radius:9px;color:#152c43;min-width:27px;height:27px;display:grid;place-items:center;font-size:14px}.tip-card{display:flex;align-items:center;gap:12px}.tip-card>span{font-size:32px}.tip-card p{font-size:12px}footer{text-align:center;padding:26px 12px 25px;color:#c1d3e8}.footer-brands{display:flex;align-items:center;justify-content:center;gap:18px;font-size:22px}.footer-brands span{height:27px;width:1px;background:#9bb2ca}.footer-senac{color:#f5f8ff}.footer-orango{color:#ff780c}.footer-brands p,footer p{font-size:12px;margin:12px 0 6px}footer small{font-size:10px;color:#7f9cba}
+@media(max-width:1180px){.app-layout{grid-template-columns:170px minmax(360px,1fr)}.right-column{grid-column:2;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding-top:0}.sidebar{grid-row:1 / span 2}.stats-row{grid-template-columns:repeat(3,minmax(80px,1fr))}.difficulty-card{grid-column:1/-1}.board.hard{grid-template-columns:repeat(14,minmax(22px,1fr))}.topbar{gap:18px}.brand-strip{min-width:330px}.senac-brand,.orango-brand{font-size:29px}}
+@media(max-width:760px){.topbar{flex-wrap:wrap;padding:15px;gap:12px}.brand-strip{min-width:0;width:100%;justify-content:center;gap:15px}.senac-brand,.orango-brand{font-size:28px}.top-message{display:none}.topbar>.primary-btn{width:100%;padding:12px}.app-layout{display:flex;flex-direction:column;padding:12px}.sidebar{min-height:auto;padding:8px}.sidebar nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.nav-item{padding:10px 8px;font-size:12px}.mascot-card{display:none}.main-panel{padding:12px}.game-heading{margin-bottom:16px}.mini-senac{display:none}.game-heading h1{font-size:22px}.game-heading p{font-size:12px}.stats-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.stat-card{padding:9px 6px;gap:6px}.stat-icon{width:25px;height:25px;font-size:17px}.stat-card small{font-size:10px}.stat-card strong{font-size:15px}.difficulty-card{grid-column:1/-1}.board-wrap{padding:7px}.board,.board.medium,.board.hard{gap:3px}.tile{border-radius:5px;font-size:15px}.discovery-banner{flex-wrap:wrap}.banner-copy{min-width:calc(100% - 60px)}.small-btn{margin-left:48px}.game-actions{align-items:flex-start;flex-direction:column}.right-column{display:flex}.side-card{padding:14px}.footer-brands{font-size:19px}}
+
+
+/* Ajustes de fidelidade ao layout de referência */
+body { overflow-x:hidden; }
+.topbar { min-height:130px; padding:16px 3.2%; gap:30px; }
+.brand-strip { min-width:455px; gap:20px; }
+.brand-logo { display:block; object-fit:contain; background:transparent; mix-blend-mode:multiply; }
+.senac-logo { width:150px; height:76px; }
+.orango-logo { width:220px; height:68px; }
+.senac-brand,.orango-brand { font-size:0; letter-spacing:0; }
+.brand-divider { flex-shrink:0; }
+.app-layout { max-width:1312px; grid-template-columns:210px minmax(0,1fr) 295px; gap:20px; padding:20px 18px 8px; }
+.sidebar { min-height:880px; }
+.main-panel { padding:20px; }
+.board-wrap { padding:12px; }
+.board { max-width:780px; gap:5px; }
+.tile { border-radius:8px; }
+.mascot-card { padding:0; min-height:330px; overflow:hidden; background:#082b50; }
+.mascot-panel-image { width:100%; height:100%; min-height:330px; display:block; object-fit:cover; object-position:center; }
+.right-column { gap:18px; padding-top:8px; }
+.side-card { padding:18px 17px; }
+footer { padding:28px 12px 28px; }
+@media (min-width:1200px) {
+  .app-layout { min-height:900px; }
+  .main-panel { min-height:875px; }
+  .board-wrap { min-height:520px; display:flex; align-items:center; }
+  .board { width:100%; }
+}
+@media (max-width:1180px) {
+  .brand-strip { min-width:0; }
+  .app-layout { grid-template-columns:170px minmax(360px,1fr); }
+  .mascot-card { display:none; }
+}
+@media (max-width:760px) {
+  .topbar { min-height:0; }
+  .brand-strip { width:100%; min-width:0; }
+  .senac-logo { width:105px; height:58px; }
+  .orango-logo { width:145px; height:52px; }
+  .app-layout { min-height:0; }
+}
+
+/* Logos sem placas brancas e coleção de recompensas aprimorada */
+.topbar { background:#f8f9fc; }
+.brand-strip { gap:18px; }
+.brand-logo { background:transparent !important; border:0; box-shadow:none; }
+.senac-logo { width:150px; height:76px; }
+.orango-logo { width:205px; height:68px; }
+.reward-collection { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:8px; margin-top:4px; }
+.reward-item { min-width:0; display:flex; flex-direction:column; align-items:center; gap:6px; }
+.reward { width:100%; max-width:48px; height:48px; border:1px solid #1a5685; border-radius:12px; display:grid; place-items:center; font-size:23px; color:#7d9bbb; background:linear-gradient(145deg,#082d50,#041d36); filter:saturate(.55); transition:all .25s ease; }
+.reward-item small { color:#8faecc; font-size:10px; text-align:center; }
+.reward.unlocked { filter:none; color:#fff; background:linear-gradient(145deg,#ffc13d,#ff790b); border-color:#ffd16a; box-shadow:0 0 0 3px #ff970b1c,0 5px 14px #ff970b25; transform:translateY(-2px); }
+.reward-item:has(.reward.unlocked) small { color:#ffc05a; font-weight:800; }
+.reward-note { margin-top:12px; padding:10px 11px; border:1px solid #124a75; border-radius:10px; background:#041f3b; color:#bdd2e8; font-size:11px; line-height:1.45; }
+.tile.reward-tile { box-shadow:inset 0 0 0 2px #ffd66b,0 0 18px #ff9d1350; }
+@media(max-width:760px) { .senac-logo { width:105px; height:58px; } .orango-logo { width:145px; height:52px; } .reward { height:40px; font-size:20px; } .reward-item small { font-size:9px; } }
+
+
+/* Revisão final: logos realmente transparentes e recompensas com hierarquia visual */
+.brand-logo { mix-blend-mode:normal !important; background:transparent !important; object-fit:contain; display:block; }
+.senac-brand, .orango-brand { background:transparent !important; box-shadow:none !important; border:0 !important; padding:0 !important; display:flex; align-items:center; justify-content:center; }
+.brand-strip { background:transparent !important; }
+.topbar { background:#f8f9fc !important; }
+.brand-divider { background:#123a67; opacity:.9; height:54px; width:2px; }
+.senac-logo { width:142px; height:78px; }
+.orango-logo { width:205px; height:68px; }
+.reward-collection { gap:7px; margin-top:17px; align-items:stretch; }
+.reward-item { padding:8px 3px 7px; border:1px solid #16466f; border-radius:13px; background:linear-gradient(180deg,#082b4d,#041b32); transition:transform .2s,border-color .2s,background .2s; }
+.reward-item:hover { transform:translateY(-3px); border-color:#3976a6; }
+.reward { max-width:48px; width:42px; height:42px; border-radius:12px; font-size:22px; filter:grayscale(.85) saturate(.35); opacity:.68; }
+.reward-item small { font-size:10px; line-height:1.2; min-height:24px; color:#9bb6d1; }
+.reward-item em { color:#6f8eac; font-size:9px; font-style:normal; white-space:nowrap; }
+.reward.unlocked { opacity:1; filter:none; transform:translateY(-2px); box-shadow:0 0 0 2px #ff970b20,0 5px 16px #ff970b28; }
+.reward-item:has(.reward.unlocked) { border-color:#ff9a20; background:linear-gradient(180deg,#153e5d,#082642); }
+.reward-item:has(.reward.unlocked) em { color:#ffc15a; font-weight:800; }
+.reward-note { margin-top:14px; border:1px solid #174d78; background:linear-gradient(120deg,#062744,#041a30); padding:12px; line-height:1.5; }
+.reward-note strong { color:#ffb334; }
+@media(max-width:760px) { .senac-logo{width:105px;height:58px}.orango-logo{width:145px;height:52px}.brand-divider{height:40px}.reward-item{padding:6px 1px}.reward{width:34px;height:36px;font-size:18px}.reward-item small{font-size:9px}.reward-item em{font-size:8px} }
+
+/* Páginas navegáveis, conquistas e ranking */
+[hidden]{display:none!important}.content-page{width:100%;min-height:570px;padding:10px 2px 24px;color:#edf5ff}.page-hero{padding:38px 34px;border:1px solid #1d4d78;border-radius:22px;background:radial-gradient(circle at 88% 10%,#17466d 0,transparent 35%),linear-gradient(135deg,#082947,#04182b 75%);box-shadow:0 14px 35px #0002}.page-kicker{color:#ff9a22;font-size:11px;font-weight:900;letter-spacing:2px}.page-hero h1,.page-heading h1{margin:12px 0;font-size:clamp(27px,3vw,40px);line-height:1.12;color:#fff}.page-hero p,.page-heading p{max-width:680px;color:#a9c0d8;line-height:1.7}.page-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.link-btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}.secondary-btn.link-btn{padding:11px 16px}.feature-grid,.about-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}.feature-card,.about-facts article{border:1px solid #173e62;border-radius:16px;padding:20px;background:linear-gradient(145deg,#092845,#061b30)}.feature-card>span,.about-facts article>span{font-size:27px}.feature-card h3,.about-facts h3{margin:13px 0 8px;color:#fff;font-size:16px}.feature-card p,.about-facts p{color:#9eb6ce;line-height:1.6;font-size:13px}.welcome-strip{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:18px;padding:22px;border:1px solid #264b6c;border-radius:16px;background:#0a2a46}.welcome-strip h2{margin:0 0 6px;color:#fff;font-size:19px}.welcome-strip p{margin:0;color:#9eb6ce;font-size:13px;line-height:1.5}.page-heading{padding:14px 0 18px}.page-heading h1{margin-bottom:8px}.achievement-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:8px 0 20px}.achievement-summary>div{background:#092744;border:1px solid #1b466d;border-radius:14px;padding:16px}.achievement-summary small{display:block;color:#9db7d0;font-size:11px}.achievement-summary strong{display:block;color:#ffab32;font-size:25px;margin-top:7px}.achievement-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.achievement-card{display:flex;align-items:center;gap:13px;min-width:0;border:1px solid #1a4266;background:linear-gradient(135deg,#092744,#061b30);border-radius:15px;padding:15px}.achievement-card.is-unlocked{border-color:#bd741c;background:linear-gradient(135deg,#173c55,#092744)}.achievement-card.is-locked{opacity:.76}.achievement-icon{flex:0 0 48px;width:48px;height:48px;display:grid;place-items:center;border-radius:13px;background:#102f4b;font-size:24px}.achievement-info{flex:1;min-width:0}.achievement-info h3{margin:0 0 5px;color:#f7fbff;font-size:14px}.achievement-info p{margin:0 0 8px;color:#9fb7ce;font-size:12px;line-height:1.4}.achievement-info small{color:#ffb13d;font-size:9px;font-weight:800;letter-spacing:.5px}.achievement-status{color:#ffb13d;font-weight:900}.ranking-table-wrap{border:1px solid #1b466d;border-radius:16px;overflow:hidden;background:#061b30}.ranking-table{width:100%;border-collapse:collapse;text-align:left}.ranking-table th{padding:14px 12px;background:#0b2d4c;color:#9fb8d1;font-size:11px;text-transform:uppercase;letter-spacing:.5px}.ranking-table td{padding:15px 12px;border-top:1px solid #153a5b;color:#e7f2ff;font-size:13px}.ranking-table tbody tr:hover{background:#0b2943}.muted-note{color:#7f9bb6;font-size:11px;line-height:1.6;margin-top:14px}.text-link{background:transparent;border:0;color:#ffad38;padding:0;margin:-5px 0 12px;cursor:pointer;font-size:11px;font-weight:700}.text-link:hover{text-decoration:underline}@media(max-width:900px){.feature-grid,.about-facts{grid-template-columns:1fr}.achievement-grid{grid-template-columns:1fr}.welcome-strip{align-items:flex-start;flex-direction:column}.page-hero{padding:27px 22px}}@media(max-width:560px){.achievement-summary{grid-template-columns:1fr}.ranking-table th,.ranking-table td{padding:10px 7px;font-size:10px}.content-page{min-height:420px}}
+/* Melhorias do ranking e resumo inicial */
+.home-stats{grid-template-columns:repeat(4,minmax(0,1fr));margin:18px 0}
+.home-leaders{margin:16px 0 20px;padding:20px;border:1px solid #1b466d;border-radius:16px;background:#071f36}
+.home-leaders h2{margin:0 0 12px;font-size:18px;color:#fff}
+.home-leader{display:flex;align-items:center;gap:12px;padding:12px 4px;border-top:1px solid #153a5b;color:#e7f2ff}
+.home-leader span{flex:1}.home-leader strong{color:#ffb13d}
+.delete-player{border:1px solid #a83b43;background:#582530;color:#fff;padding:8px 10px;border-radius:8px;font-weight:800;cursor:pointer;white-space:nowrap}
+.delete-player:hover{background:#87323d}.ranking-table-wrap{overflow-x:auto}.ranking-table{min-width:650px}
+.senac-logo{object-fit:contain;background:transparent}
+@media(max-width:760px){.home-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+
+/* Correção de navegação e recompensa de desconto */
+[hidden] { display: none !important; }
+.sidebar { position: relative; z-index: 5; }
+.sidebar nav { position: relative; z-index: 6; }
+.nav-item { position: relative; z-index: 7; cursor: pointer; pointer-events: auto; }
+.discount-reward { width: 48px; max-width: 100%; font-size: 15px; font-weight: 1000; letter-spacing: -1px; color: #ffe5a3; border-color: #b77721; }
+.discount-reward.unlocked { color: #fff; font-size: 15px; background: linear-gradient(145deg,#ffb72d,#f56b16); }
+.discount-reward-item:has(.reward.unlocked) { border-color: #ff9a20; }
+.discount-reward-item small { color: #ffc15a; font-weight: 800; }
+@media(max-width:760px) { .discount-reward { width: 34px; font-size: 12px; } }
+
+/* Guia animado, música e tela de vitória */
+.mini-senac { display:flex; align-items:center; justify-content:flex-end; width:92px; }
+.mini-senac-logo { display:block; width:88px; height:42px; object-fit:contain; object-position:center; }
+.footer-senac-logo { width:96px; height:42px; object-fit:contain; }
+.footer-orango-logo { width:112px; height:40px; object-fit:contain; }
+.game-action-buttons { display:flex; flex-wrap:wrap; gap:8px; justify-content:flex-end; }
+.game-action-buttons .secondary-btn { padding:9px 10px; }
+#musicBtn[aria-pressed="true"] { color:#ffbd4a; border-color:#ff9a20; box-shadow:0 0 0 2px #ff9a201c; }
+.modal-backdrop[hidden] { display:none !important; }
+.modal-backdrop { position:fixed; inset:0; z-index:1000; display:flex; align-items:center; justify-content:center; padding:20px; background:#010c1bd9; backdrop-filter:blur(6px); animation:modalFadeIn .2s ease-out; }
+.game-modal { position:relative; width:min(100%,560px); max-height:min(90vh,850px); overflow:auto; padding:30px; border:1px solid #28608b; border-radius:22px; color:#f4f8ff; text-align:center; background:radial-gradient(circle at 85% 0,#164c76 0,transparent 35%),linear-gradient(145deg,#082b4b,#03182e); box-shadow:0 24px 90px #0009; animation:modalPop .35s cubic-bezier(.2,.8,.2,1); }
+.game-modal h2 { margin:8px 0 12px; font-size:clamp(25px,4vw,34px); }
+.game-modal>p { color:#c0d5e9; font-size:14px; line-height:1.65; }
+.modal-close { position:absolute; top:10px; right:13px; width:36px; height:36px; border:1px solid #27577d; border-radius:50%; color:#eaf4ff; background:#082746; font-size:25px; }
+.tutorial-demo { display:grid; grid-template-columns:repeat(3,54px); gap:7px; justify-content:center; margin:22px auto; }
+.demo-tile { display:grid; place-items:center; width:54px; height:54px; border:1px solid #28669a; border-radius:10px; color:#fff; background:linear-gradient(145deg,#174b7f,#0a315b); font-size:24px; font-weight:900; animation:demoPulse 2.4s infinite; }
+.demo-tile:nth-child(2),.demo-tile:nth-child(6) { animation-delay:.25s; }
+.demo-tile:nth-child(4) { animation-delay:.5s; }
+.demo-safe { color:#8af0b0; background:#124c48; }
+.demo-number { color:#54d7ff; }
+.demo-reward { background:linear-gradient(145deg,#ffb521,#ff790b); animation:demoBounce 1.5s infinite; }
+.demo-mine { background:#842c38; animation:demoPulse 2.4s infinite 1s; }
+.tutorial-steps { display:grid; gap:10px; margin:20px 0 24px; padding:0; text-align:left; list-style:none; }
+.tutorial-steps li { display:flex; align-items:flex-start; gap:11px; padding:10px 12px; border:1px solid #1b466d; border-radius:12px; background:#061f38; color:#c7d9eb; font-size:13px; line-height:1.5; }
+.tutorial-steps li>b { flex:0 0 26px; width:26px; height:26px; display:grid; place-items:center; border-radius:8px; color:#172b3d; background:linear-gradient(140deg,#ffb21b,#ff790b); }
+.tutorial-steps strong { color:#fff; }
+.victory-modal { width:min(100%,500px); border-color:#e99127; background:radial-gradient(circle at 50% 0,#25547a 0,transparent 42%),linear-gradient(145deg,#092e4b,#03182e); }
+.victory-confetti { margin:0 auto 12px; font-size:34px; animation:celebrate 1s ease-in-out infinite alternate; }
+.victory-modal h2 { color:#ffbd45; font-size:clamp(34px,6vw,46px); }
+.victory-prize { display:flex; align-items:center; gap:15px; margin:22px 0; padding:15px; border:1px solid #b87825; border-radius:15px; text-align:left; background:#0b2b45; }
+.victory-prize strong { display:grid; place-items:center; flex:0 0 78px; height:70px; border-radius:13px; color:white; background:linear-gradient(145deg,#ffb72d,#f56b16); font-size:27px; }
+.victory-prize span { color:#d0e0ef; font-size:12px; line-height:1.5; }
+.victory-orango-btn { width:100%; margin-bottom:10px; }
+.victory-modal>.secondary-btn { width:100%; }
+@keyframes modalFadeIn { from{opacity:0} to{opacity:1} }
+@keyframes modalPop { from{opacity:0;transform:translateY(15px) scale(.96)} to{opacity:1;transform:translateY(0) scale(1)} }
+@keyframes demoPulse { 0%,100%{transform:scale(1);filter:brightness(1)} 50%{transform:scale(.94);filter:brightness(1.35)} }
+@keyframes demoBounce { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-7px) rotate(4deg)} }
+@keyframes celebrate { from{transform:translateY(0) rotate(-3deg)} to{transform:translateY(-6px) rotate(3deg)} }
+@media(max-width:760px) {
+ .brand-strip { min-width:0; }
+ .senac-logo { width:112px; height:58px; }
+ .orango-logo { width:145px; height:52px; }
+ .topbar>.primary-btn { width:auto; margin:auto; }
+ .mini-senac { display:none; }
+ .game-action-buttons { width:100%; justify-content:flex-start; }
+ .game-action-buttons .secondary-btn { white-space:normal; }
+ .game-modal { padding:25px 18px 20px; }
+ .tutorial-demo { grid-template-columns:repeat(3,46px); }
+ .demo-tile { width:46px; height:46px; }
+ .footer-senac-logo { width:82px; }
+ .footer-orango-logo { width:96px; }
+}
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; } }
